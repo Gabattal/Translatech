@@ -1,5 +1,5 @@
-import fastify, { FastifyRequest, FastifyReply } from 'fastify';
-import createTranslateHandler from '@/services/translate/handlers/translateDocument'
+import fastify, {FastifyRequest, FastifyReply} from 'fastify';
+import createTranslateHandler from './services/translate/handlers/translateDocument'
 import cors from '@fastify/cors';
 import fastifyMultipart from '@fastify/multipart';
 import {TypeBoxTypeProvider} from "@fastify/type-provider-typebox";
@@ -19,6 +19,7 @@ async function initServer(server:TServer){
     });
 
     server.post('/upload', async (request: FastifyRequest, reply: FastifyReply) => {
+        // @ts-ignore
         const { fileInput } = request.body;
         const content = JSON.parse(fileInput[0].data.toString());
         return content;
