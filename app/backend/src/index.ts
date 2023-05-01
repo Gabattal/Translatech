@@ -10,7 +10,7 @@ export type TServer = typeof app;
 
 async function initServer(server:TServer){
     const plugins = [
-        { plugin: cors, options: { origin: ['http://localhost:8000'] } },
+        { plugin: cors, options: { origin: ['*'] } },
     ];
     plugins.forEach(({ plugin, options }) => server.register(plugin, options));
 
@@ -22,6 +22,10 @@ async function initServer(server:TServer){
         const { fileInput } = request.body;
         const content = JSON.parse(fileInput[0].data.toString());
         return content;
+    });
+
+    server.get('/test', async (request: FastifyRequest, reply: FastifyReply) => {
+        return 'coucou';
     });
     await createTranslateHandler(server)
     return server
