@@ -17,14 +17,14 @@ const submitForm = async () => {
     formData.append('fileInput', file);
 
     try {
-        const response = await axios.post('http://localhost:3000/upload', formData);
+        const response = await axios.post('https://translatech-api.vercel.app/upload', formData);
 
         //let characterCount = 0;
         //console.log(`Nombre de caractères : ${characterCount}`);
         //const estimatedPrice = (characterCount * 0.0004).toFixed(2)
         //console.log(`Prix estimé : ${estimatedPrice}`)
 
-        axios.post('http://localhost:3000/translate/document', {
+        axios.post('https://translatech-api.vercel.app/translate/document', {
             document: response.data,
             lang: "fr",
             targetLang: "en-GB"
