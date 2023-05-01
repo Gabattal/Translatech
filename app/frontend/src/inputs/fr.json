@@ -1,0 +1,28 @@
+{
+  "accueil": {
+    "titre": "Page d'accueil",
+    "message": "Bienvenue sur notre site !",
+    "bouton": "En savoir plus",
+    "caractéristiques": {
+      "titre": "Nos caractéristiques\n teste moi ça"
+    }
+  },
+  "contact": {
+    "titre": "Contactez-nous",
+    "nom": "Nom",
+    "email": "Adresse e-mail",
+    "sujet": "Sujet",
+    "message": "Message",
+    "bouton": "Envoyer"
+  },
+  "à propos": {
+    "titre": "À propos de nous",
+    "description": "Ceci est une description",
+    "valeurs": {
+      "titre": "Nos valeurs"
+    },
+    "équipe": {
+      "titre": "Notre équipe"
+    }
+  }
+}
